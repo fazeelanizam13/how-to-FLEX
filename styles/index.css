@@ -1,0 +1,254 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Roboto-Black';
+  src: url("../fonts/Roboto-Black.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'RobotoMono-Medium';
+  src: url("../fonts/RobotoMono-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'RobotoMono';
+  src: url("../fonts/RobotoMono-Regular.ttf") format("truetype");
+}
+html{
+  font-size: 16px;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+  overflow: hidden;
+}
+.box{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.css{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: .8rem;
+  line-height: 1.7rem;
+  background-color: #000;
+}
+.css-container, .css-child{
+  width: 100%;
+  height: 45%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.css-container, .css-child, .child-count{
+  border-bottom: 1px solid #222;
+  border-right: 1px solid #222;
+}
+.child-count{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+button.increase, button.decrease{
+  margin: 3%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+}
+.notes{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+.notes img{
+  width: 100%;
+  filter: contrast() grayscale();
+}
+.footer{
+  width: 100%;
+  margin-top: 5%;
+  padding: 3%;
+  border-top: 1px solid #222;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.footer img{
+  height: 20px;
+  margin: 5px;
+}
+p.exc{
+  text-align: right;
+  font-size: .7rem;
+  margin: 0;
+}
+p.exc a{
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid #aaa;
+}
+label{
+  font-size: 1rem;
+}
+.demo{
+  width: 75%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  display: flex;
+  scrollbar-color: #555 #000;
+}
+.demo div{
+  font-size: 1.1rem;
+  min-height: 2%;
+  text-align: center;
+  margin: 1%;
+  padding: .5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.note-sheet{
+  font-family: Roboto;
+  font-size: .9rem;
+  line-height: 1.3rem;
+  letter-spacing: .01rem;
+  word-spacing: .05rem;
+  text-align: justify;
+  position: absolute;
+  top: 100vh;
+  right: 0;
+  width: 90vw;
+  height: 90vh;
+  padding: 5vw;
+  background-color: black;
+  color: #aaa;
+  overflow-y: scroll;
+  transition: top .3s ease-in;
+}
+.note-sheet .content{
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.note-sheet.visible{
+  top: 0;
+}
+img.flex-graph{
+  width: 60%;
+  margin: 1% 20%;
+  background-color: white;
+}
+.note-sheet li{
+  margin-bottom: 4px;
+}
+pre, select, code, .footer a{
+  font-family: RobotoMono;
+}
+.footer a{
+  text-decoration: none;
+  padding: 5px;
+}
+code{
+  font-family: RobotoMono-Medium;
+}
+pre{
+  margin: 0;
+  padding: 0;
+}
+strong{
+  font-family: Roboto-Black;
+}
+select, input, button{
+  background-color: #fff;
+  font-size: .8rem;
+  border: none;
+  text-align: center;
+}
+select:focus, input:focus, button:focus, option:hover{
+  outline: none;
+  border: 1px solid #555
+}
+.demo div, input, select, button{
+  border-radius: 2px;
+}
+.demo .hidden{
+  display: none;
+}
+input{
+  width: 10%;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 768px){
+  html{
+    font-size: 13px;
+  }
+  .box{
+    flex-direction: column;
+  }
+  .css{
+    width: 100%;
+    height: auto;
+  }
+  .demo{
+    width: 100%;
+    overflow-y: scroll;
+  }
+  .css-container, .css-child{
+    width: 100%;
+    height: auto;
+  }
+  .child-count{
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+  }
+  button.increase, button.decrease{
+    width: 30px;
+    height: 30px;
+    font-size: 2rem;
+  }
+  .notes{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  img.flex-graph{
+    width: 75%;
+    margin: 1% 12%;
+  }
+  .note-sheet{
+    top: 0;
+    right: -100vw;
+    line-height: 1.4rem;
+    transition: right ease .3s;
+  }
+  .note-sheet.visible{
+    right: 0;
+  }
+  .note-sheet .content{
+    width: 100%;
+  }
+}
