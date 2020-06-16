@@ -1,6 +1,6 @@
 # [How to FLEX](https://fazeelanizam13.github.io/how-to-FLEX/)
 
-A tool for practicing CSS flex layout
+A tool for practicing CSS flex layout.
 
 ### Built with
 
